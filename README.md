@@ -1,15 +1,15 @@
-Continuous data acquisition using Tango
-=======================================
+Continuous data acquisition using Tango-Controls
+================================================
 
 ## Overview
-Generally spoken, these are the two fundamentally different types of taking data:
+There are the two fundamentally different schemes of taking data:
 
-- polling: move, wait, take snapshot, repeat
+- polling: wait, take snapshot, repeat
 - event driven: receive data as soon as it is available
 
-The former mechanism generates datasets that are relatively easy to analyze, since the structure is given by the data acquisition routine. There is an identical dimension to each data field in the dataset. Event driven acquisition on the other hand, produces labeled (timestamps) datasets. The Analysis of such data typically requires multidimensional binning routines.
+The former mechanism generates datasets that are relatively easy to analyze, since the structure is given by the data acquisition routine. There is an identical dimension to each data field in the dataset. Event driven acquisition on the other hand, produces labeled datasets (timestamps). The number of entries in a data field depends on the frequency the corresponding event is being triggered. The Analysis of such data typically requires multidimensional binning routines.
 
-Tango-controls allows both types of data access. The polling mechanism, and the push mechanism. The core of the present package is a device class ("DataAggregator") that tracks a set of tango-attributes using any of the two aforementioned schemes. Another device class ("RunConfigurator") may be used to control a group of DataAggregators collectively. The package is inspired by the data acquisition scheme deployed in Karabo at the EuropeanXFEL.
+Tango-Controls allows both types of data access. The polling mechanism, and the push mechanism. The core of the present package is a device class ("DataAggregator") that tracks a set of tango-attributes using any of the two aforementioned schemes. Another device class ("RunConfigurator") may be used to control a group of DataAggregators collectively. The package is inspired by the data acquisition scheme deployed at the EuropeanXFEL.
 
 ## Installation
 
@@ -86,7 +86,6 @@ Once the device is running, the user has to enter the name of an allowed experim
 
 - Adding alternatives to hdf5. The hdf data group seems to have limited resources and there is strong competition by other structured data formats like parquet or feather.
 - Store arbitrary blobs of data in an efficient way. This should be possible using the aforementioned file formats.
-
 
 ## what is Tango-Controls
 
