@@ -80,12 +80,12 @@ Once the device is running, the user has to enter the name of an allowed experim
 ### Additional information and comments
 
 - Keep in mind python's global interpreter lock! While it is possible to run several devices on the same device-server, they are not actually running in parallel. If the processing time per cycle becomes too high, try running the data-aggregator devices on separate device servers. However, the typical limitation is network bandwidth rather than processing time.
-- The current package was originally written as a tool for data acquisition at "INFICON". The development was based on the need to have a tool that would yield structured data, without the need to follow any standardized formats (like nexus for instance). This could of course be adapted in the future.
+- The package was originally written at "INFICON", driven by the need to have a tool that would yield structured data. Following existing data formats was not a priority. This could of course be adapted in the future.
 
 ## Further developments
 
-- Adding alternatives to hdf5. The hdf data group seems to have limited resources and there is strong competition by other structured data formats like parquet or feather.
-- Store arbitrary blobs of data in an efficient way. This should be possible using the aforementioned file formats.
+- Adding alternatives to hdf5, like parquet or feather.
+- ...
 
 ## what is Tango-Controls
 
